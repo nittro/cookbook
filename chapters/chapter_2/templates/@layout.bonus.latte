@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+
+	<title>{ifset title}{include title|stripHtml} | {/ifset}Nette Web</title>
+	<link rel="stylesheet" type="text/css" href="{$basePath}/css/nittro-full.css" />
+	<script type="application/javascript" src="{$basePath}/js/nittro-full.js" async defer></script>
+</head>
+
+<body>
+	<div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message}</div>
+
+	{snippet menu}
+		<h2>menu</h2>
+		<ul>
+			<li><a n:href="Chapter2Bonus:default">{ifCurrent Chapter2Bonus:default}->{/ifCurrent} default</a></li>
+			<li><a n:href="Chapter2Bonus:page2">{ifCurrent Chapter2Bonus:page2}->{/ifCurrent} page 2</a></li>
+			<li><a n:href="Chapter2Bonus:page3">{ifCurrent Chapter2Bonus:page3}->{/ifCurrent} page 3</a></li>
+		</ul>
+	{/snippet}
+
+	{snippet content}
+		{include content}
+	{/snippet}
+
+	<hr>
+
+	<a n:href="Chapter2:" data-ajax="false">with Nittro Presenter</a>
+	<a n:href="Chapter2Trait:" data-ajax="false">with Nittro Trait</a>
+	<a n:href="Chapter2Bonus:" data-ajax="false">bonus chapter</a>
+
+	{block scripts}
+	<script src="https://nette.github.io/resources/js/netteForms.min.js"></script>
+	{/block}
+</body>
+</html>
