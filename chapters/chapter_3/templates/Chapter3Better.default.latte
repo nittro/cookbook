@@ -1,20 +1,20 @@
 {block content}
 
-<h1>Welcome to our awesome site!</h1>
+<h1>Welcome to our even more awesome site!</h1>
 
 <div class="row">
-    <article class="col-lg-8">
-        <h2>This is where we present our amazing content.</h2>
+    <article class="col-md-8">
+        <h2>This is where we present our AMAZING content.</h2>
         <p>It's <strong>{date('l, H:i:s')}</strong>, in case you didn't know.</p>
     </article>
-    <aside class="col-lg-4 bg-info" n:snippet="subscriptionForm"> <!-- n:snippet added here -->
+    <aside class="col-md-4 bg-info" n:snippet="subscriptionForm"> <!-- n:snippet added here -->
         {if !$subscribed}
-            <h2>Subscribe to our newsletter:</h2>
+            <h3>Subscribe to our newsletter:</h3>
             {form subscriptionForm data-history => 'false'} <!-- data-history added here -->
                 <p>{label email /} {input email} {input subscribe}</p>
             {/form}
         {else}
-            <h2>Thank you!</h2>
+            <h3>Thank you!</h3>
             <p>We promise we won't bother you often.</p>
         {/if}
     </aside>
