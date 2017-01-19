@@ -1,0 +1,45 @@
+{block content}
+
+<h1>Nittro Transitions</h1>
+
+<div n:snippet="fade" class="nittro-transition-fade bg-info">
+    <h3>
+        <a n:href="fade!" data-history="false" data-transition="#snippet--fade">Fade</a>
+        <strong n:ifset="$fade">&check;</strong>
+    </h3>
+    <pre><code class="language-html">&lt;div class="nittro-transition-fade"&gt;</code></pre>
+</div>
+
+<div n:snippet="dim" class="nittro-transition-dim bg-info">
+    <h3>
+        <a n:href="dim!" data-history="false" data-transition="#snippet--dim">Dim</a>
+        <strong n:ifset="$dim">&check;</strong>
+    </h3>
+    <pre><code class="language-html">&lt;div class="nittro-transition-dim"&gt;</code></pre>
+</div>
+
+<div n:snippet="slide" class="nittro-transition-slide bg-info">
+    <h3>
+        <a n:href="slide!" data-history="false" data-transition="#snippet--slide">Slide</a>
+        <strong n:ifset="$slide">&check;</strong>
+    </h3>
+    <pre><code class="language-html">&lt;div class="nittro-transition-slide"&gt;</code></pre>
+</div>
+
+<div style="position: relative;">
+    <div id="bar" class="nittro-transition-bar"></div>
+    <div n:snippet="bar" class="bg-info">
+        <h3>
+            <a n:href="bar!" data-history="false" data-transition="#bar">Bar</a>
+            <strong n:ifset="$bar">&check;</strong>
+        </h3>
+        <pre><code class="language-html">&lt;div class="nittro-transition-bar"&gt;</code></pre>
+
+        <p>
+            <em>Note:</em> if the element with the <code>nittro-transition-bar</code> class is a direct
+            child of the <code>&lt;body&gt;</code> element it's CSS position is set to <code>fixed</code>
+            instead of absolute. That way you can use the Bar transition both for the whole page as well
+            as any arbitrary element.
+        </p>
+    </div>
+</div>

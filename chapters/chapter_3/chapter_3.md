@@ -118,10 +118,35 @@ As you can see, there's not much that needs to be done on the server side when y
 
 Sometimes the default behaviour to load all local URLs using AJAX isn't appropriate.
  Typical examples are links to downloadable content, or in some cases login forms
- and other scenarios when you want to reload the whole page. For forms and links
+ and other scenarios where you want to reload the whole page. For forms and links
  which you want to exclude from AJAX handling the solution is to add the
  `data-ajax="false"` attribute. When you want to force a redirect on the server
  side to result in a full-page reload you can just add `$presenter->payload->allowAjax = false;`
  before the redirect, or more succintly `$presenter->allowAjax(false)`, courtesy
  of the `PresenterUtils` trait. The `allowAjax()` method returns the presenter,
  so method chaining is possible.
+
+#### Part 3: Animations
+
+One thing you might have noticed already is that when stuff gets loaded using AJAX,
+ the visual feedback of the site updating might be a little underwhelming. That's why
+ most websites which employ AJAX use some sort of animation or show a spinner to
+ indicate that content is being updated. This is also very easy to do with Nittro.
+ Whenever a request to update the page using AJAX is being dispatched Nittro looks
+ for elements to animate. By default Nittro selects all elements in the page that 
+ have the `nittro-transition-auto` class but you can override this for any link
+ or form using the `data-transition` attribute. The value of the attribute should
+ be what in the Nittro world is called a Simple Selector - it's almost like a regular
+ CSS selector, except it's a little limited in that you can only use an `#id .class`
+ combination or just a single `.class`. You can use multiple Simple Selectors separated
+ by commas just like you would for example in a jQuery selector though so this limitation
+ shouldn't really be to hard to comply with.
+
+ Nittro applies a sequence of classes to any elements found for a given page transaction
+ that allow you to execute complex animation schemes. We're going to go to greater detail
+ about the mechanics of this later in the advanced section; for now we're going to present
+ a couple of transitions that are built into Nittro. There are currently four of those:
+ Fade, Dim, Slide and Bar. What they look like is best described by pointing you to the
+ [[live example|Chapter3Transitions:]]; the way you use them is by attaching the appropriate
+ `nittro-transition-*` class to the animated element or elements. Don't forget to add
+ the `nittro-transition-auto` class to any elements that you want to animate by default.
