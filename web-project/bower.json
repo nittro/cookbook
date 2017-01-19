@@ -1,0 +1,36 @@
+{
+  "name": "app-nittro-cookbook",
+  "authors": [
+    "Honza Cerny <hello@honzacerny.com>",
+    "Honza Cerny <hello@honzacerny.com>"
+  ],
+  "description": "Nittro cookbook page",
+  "main": "",
+  "moduleType": [],
+  "keywords": [
+    "nittro",
+    "nette",
+    "example",
+    "cookbook"
+  ],
+  "license": "MIT",
+  "homepage": "http://cookbook.nittro.org",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "www/components/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "nittro": "master",
+    "bootstrap": "^3.3.7"
+  },
+  "resolutions": {
+    "nittro-core": "master",
+    "nittro-page": "master",
+    "nittro": "master"
+  }
+}
