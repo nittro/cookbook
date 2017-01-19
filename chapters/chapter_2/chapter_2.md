@@ -23,7 +23,7 @@ The Nette bridge provides a trait that simplifies some of these
 #### What you need
 
 This chapter assumes that you have a basic working installation
- of Nittro in your project as described in [[Chapter 1|01 Basic install]],
+ of Nittro in your project as described in [[Chapter 1|Cookbook:chapter 1]],
  as well as Composer available within your `PATH`.
 
 #### What you'll get
@@ -44,6 +44,8 @@ composer install nittro/nette-bridges
 ```
 
 #### Register the Nittro Latte macros
+
+### TODO move to a later chapter
 
 Add this to the `latte` section of your `config.neon`:
 

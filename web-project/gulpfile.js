@@ -75,3 +75,5 @@ gulp.task('css', function() {
         .pipe(concat('nittro-full.css'))
         .pipe(gulp.dest('www/css/'));
 });
+
+gulp.task('default', ['js-dev', 'css']);

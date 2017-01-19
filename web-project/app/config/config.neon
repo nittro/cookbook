@@ -2,14 +2,15 @@ parameters:
 
 
 application:
-	errorPresenter: Error
-	mapping:
-		*: App\*Module\Presenters\*Presenter
+    errorPresenter: Error
+    mapping:
+        *: App\*Module\Presenters\*Presenter
 
 
 session:
-	expiration: 14 days
+    expiration: 14 days
 
 
 services:
-	router: App\RouterFactory::createRouter
+    router: App\RouterFactory::createRouter
+    parsedown: App\Parsedown(basePath: "%appDir%/../../chapters")
