@@ -42,7 +42,7 @@ Place the following two lines of code inside the `<head>` section
 Still in your `@layout.latte` template you'll need to wrap your
  main content block with a snippet, for example like this:
 
->> file chapter_1/templates/@layout.latte from "snippet content..." to ".../snippet"
+>> template chapter_1/templates/@layout.latte, snippet content
 
 Now open your base presenter class and add the `afterRender()` method
  if it's not already present. Add the following code to the method's body:

@@ -107,7 +107,7 @@ class Parsedown extends \Parsedown
             $target = trim($m[2], '"\'');
             $params = [];
 
-            if (!empty($m[3]) && preg_match_all('/(line|from|to|method|block)[ ]+("[^"]+"|\'[^\']+\'|[^,\s]+)/', $m[3], $p, PREG_SET_ORDER)) {
+            if (!empty($m[3]) && preg_match_all('/(line|from|to|method|block|snippet)[ ]+("[^"]+"|\'[^\']+\'|[^,\s]+)/', $m[3], $p, PREG_SET_ORDER)) {
                 foreach ($p as $param) {
                     $params[$param[1]] = trim($param[2], '"\'');
                 }
@@ -246,7 +246,15 @@ class Parsedown extends \Parsedown
         $source = $this->loadFile($path);
 
         if (isset($params['block'])) {
-            if (!preg_match('/\{block\s+#?' . ltrim($params['block'], '#') . '\s*(?:\}|\|)/', $source, $m, PREG_OFFSET_CAPTURE)) {
+            $type = 'block';
+            $name = ltrim($params['block'], '#');
+        } else if (isset($params['snippet'])) {
+            $type = 'snippet';
+            $name = $params['snippet'];
+        }
+
+        if (isset($type) && isset($name)) {
+            if (!preg_match("/\\{{$type}\\s+#?{$name}\\s*(?:\\}|\\|)|<(\\S+)\\s+(?:[^>]+\\s+)n:{$type}=\"{$name}\"/", $source, $m, PREG_OFFSET_CAPTURE)) {
                 throw new \RuntimeException("Block not found");
             }
 
@@ -254,8 +262,14 @@ class Parsedown extends \Parsedown
             $end = $start + strlen($m[0][0]);
             $open = 1;
 
+            if (!empty($m[1][0])) {
+                $closing = "@<(/?){$m[1][0]}(\\s+|>)@";
+            } else {
+                $closing = "@\\{(/?)$type(?:\\s+|\\}|\\|)@";
+            }
+
             do {
-                if (preg_match('@\{(/?)block(?:\s+|\}|\|)@', $source, $m, PREG_OFFSET_CAPTURE, $end)) {
+                if (preg_match($closing, $source, $m, PREG_OFFSET_CAPTURE, $end)) {
                     $end = $m[0][1] + strlen($m[0][0]);
                     $open += empty($m[1][0]) ? 1 : -1;
                 } else {
