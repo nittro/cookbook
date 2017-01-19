@@ -10,7 +10,7 @@ var options = {
             // libraries from other vendors, such as jQuery...
         ],
         css: [
-            './bower_components/bootstrap/dist/css/bootstrap.css'
+
         ]
     },
 
@@ -45,12 +45,12 @@ var options = {
 
         ],
         css: [
-
+            './bower_components/bootstrap/dist/css/bootstrap.css'
         ]
     },
     bootstrap: true, // true = generated bootstrap, otherwise provide a path
     stack: true // include the _stack library
-}
+};
 
 var builder = new nittro.Builder(options);
 
@@ -76,4 +76,9 @@ gulp.task('css', function() {
         .pipe(gulp.dest('www/css/'));
 });
 
-gulp.task('default', ['js-dev', 'css']);
+gulp.task('fonts', function () {
+    return gulp.src('./bower_components/bootstrap/dist/fonts/*')
+        .pipe(gulp.dest('www/fonts/'));
+});
+
+gulp.task('default', ['js-dev', 'css', 'fonts']);

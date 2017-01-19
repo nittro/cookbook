@@ -1,28 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width">
+{extends '../../common/templates/@layout.latte'}
 
-	<title>{ifset title}{include title|stripHtml} | {/ifset}Nette Web</title>
-	<link rel="stylesheet" type="text/css" href="{$basePath}/css/nittro-full.css" />
-	<script type="application/javascript" src="{$basePath}/js/nittro-full.js" async defer></script>
-</head>
-
-<body>
-	<div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message}</div>
-	{snippet content}
-		{include content}
-	{/snippet}
-
-	<hr>
-
-	<ul class="nav nav-pills">
-		<li role="presentation"><a n:href="Chapter3:" data-ajax="false">Naïve</a></li>
-		<li role="presentation"><a n:href="Chapter3Better:" data-ajax="false">Better</a></li>
-		<li role="presentation"><a n:href="Chapter3Transitions:" data-ajax="false">Transitions</a></li>
-	</ul>
-
-	{block scripts}{/block}
-</body>
-</html>
+<ul n:inner-block="nav">
+    <li role="presentation"><a n:href="Chapter3:" data-ajax="false">Naïve</a></li>
+    <li role="presentation"><a n:href="Chapter3Better:" data-ajax="false">Better</a></li>
+    <li role="presentation"><a n:href="Chapter3Transitions:" data-ajax="false">Transitions</a></li>
+</ul>

@@ -1,0 +1,82 @@
+{block head}
+    <style type="text/css">
+        .nittro-flash {
+            padding: 10px 20px 10px 40px;
+            box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+        }
+
+        .nittro-flash:after {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            margin-top: -10px;
+            font: normal normal 20px/1 'Glyphicons Halflings';
+            color: rgba(0, 0, 0, 0.4);
+        }
+
+        .nittro-flash-global-holder .nittro-flash {
+            position: relative;
+            padding: 20px 50px;
+        }
+
+        .nittro-flash-global-holder .nittro-flash:after {
+            left: 15px;
+            margin-top: -15px;
+            font-size: 30px;
+        }
+
+        .nittro-flash.nittro-flash-info {
+            background: #D9EDF7;
+        }
+
+        .nittro-flash.nittro-flash-info:before {
+            border-bottom-color: #D9EDF7;
+        }
+
+        .nittro-flash.nittro-flash-info:after {
+            content: "\e086";
+        }
+
+        .nittro-flash.nittro-flash-warning {
+            background: #FCF8E3;
+        }
+
+        .nittro-flash.nittro-flash-warning:before {
+            border-bottom-color: #FCF8E3;
+        }
+
+        .nittro-flash.nittro-flash-warning:after {
+            content: "\e107";
+        }
+
+        .nittro-flash.nittro-flash-error {
+            background: #F2DEDE;
+        }
+
+        .nittro-flash.nittro-flash-error:before {
+            border-bottom-color: #F2DEDE;
+        }
+
+        .nittro-flash.nittro-flash-error:after {
+            content: "\e209";
+        }
+    </style>
+{/block}
+
+{block content}
+
+<h1>This is an example of Flash Messages integration.</h1>
+
+<p>
+    You can customise the appearance of flash messages
+    using CSS. All flash messages have the <code>nittro-flash</code>
+    class as well as <code>nittro-flash-&lt;type&gt;</code>.
+</p>
+
+<p>And it's <strong>{date('l, H:i:s')}</strong>, in case you forgot.</p>
+
+<ul>
+    <li><a n:href="info!" data-history="false">Info</a></li>
+    <li><a n:href="warning!" data-history="false">Warning</a></li>
+    <li><a n:href="error!" data-history="false">Error</a></li>
+</ul>

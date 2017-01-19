@@ -2,5 +2,6 @@ app/config/config.local.neon
 vendor
 bower_components
 node_modules
-www/css/nittro-full*
-www/js/nittro-full*
+www/css/*
+www/js/*
+www/fonts/*

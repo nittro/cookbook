@@ -19,11 +19,12 @@
 		"nette/utils": "^2.4",
 		"latte/latte": "^2.4",
 		"tracy/tracy": "^2.4",
-		"nittro/nette-bridges": "^1.0",
+		"nittro/nette-bridges": "dev-master",
 		"erusev/parsedown": "^1.6"
 	},
 	"require-dev": {
 		"nette/tester": "^1.6"
 	},
-	"minimum-stability": "stable"
+	"minimum-stability": "dev",
+    "prefer-stable": true
 }

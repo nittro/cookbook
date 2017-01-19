@@ -1,0 +1,23 @@
+{block content}
+
+<h1>Targeted messages appear near a target element.</h1>
+
+<div class="row">
+    <div id="flash" class="col-md-4 bg-info">
+        <p>
+            Every component in Nette (including the presenter) has its own separate flash session and
+            when sending flashes in the payload Nette keeps them in separate arrays keyed by the
+            components' flash session ID. That means we can target flashes on the client side to appear
+            near the component they originated from. In Nittro this is done by assigning the desired
+            target element an HTML ID equal to that of the flash session ID; in the case of the presenter
+            flash session that is simply <code>flash</code>.
+        </p>
+        <p>Oh, and it's <strong>{date('l, H:i:s')}</strong>, if you didn't notice.</p>
+    </div>
+</div>
+
+<ul>
+    <li><a n:href="info!" data-history="false">Info</a></li>
+    <li><a n:href="warning!" data-history="false">Warning</a></li>
+    <li><a n:href="error!" data-history="false">Error</a></li>
+</ul>
