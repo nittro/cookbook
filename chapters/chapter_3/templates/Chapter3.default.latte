@@ -1,0 +1,21 @@
+{block content}
+
+<h1>Welcome to our awesome site!</h1>
+
+<div class="row">
+    <article class="col-lg-8">
+        <h2>This is where we present our amazing content.</h2>
+        <p>It's <strong>{date('l, H:i:s')}</strong>, in case you didn't know.</p>
+    </article>
+    <aside class="col-lg-4 bg-info">
+        {if !$subscribed}
+            <h2>Subscribe to our newsletter:</h2>
+            {form subscriptionForm}
+                <p>{label email /} {input email} {input subscribe}</p>
+            {/form}
+        {else}
+            <h2>Thank you!</h2>
+            <p>We promise we won't bother you often.</p>
+        {/if}
+    </aside>
+</div>

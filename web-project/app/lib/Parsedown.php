@@ -194,11 +194,10 @@ class Parsedown extends \Parsedown
 
             if (isset($params['to'])) {
                 $length = $this->findLineEnd($source, $this->findPattern($source, $params['to'], $from)) - $from + 1;
+                $source = substr($source, $from, $length);
             } else {
-                $length = null;
+                $source = substr($source, $from);
             }
-
-            $source = substr($source, $from, $length);
         }
 
         return $source;
@@ -282,9 +281,10 @@ class Parsedown extends \Parsedown
 
             if ($end !== null) {
                 $end = $this->findLineEnd($source, $end) - $start + 1;
+                $source = substr($source, $start, $end);
+            } else {
+                $source = substr($source, $start);
             }
-
-            $source = substr($source, $start, $end);
         }
 
         return $source;

@@ -30,8 +30,8 @@ This chapter assumes that you have a basic working installation
 
 At the end of this chapter you should have a much finer
  control over which snippets get invalidated, as well as
- access to a couple of useful presenter methods and Latte
- macros which should make your everyday life in the Nittro
+ access to a couple of useful presenter methods 
+ which should make your everyday life in the Nittro
  world a bit easier.
 
 #### Install the Nette bridge using Composer
@@ -61,11 +61,18 @@ This will register the Nittro Latte macros `{snippetId}`, `{param}`
  section of the Cookbook and later when we introduce dynamic snippet
  support.
 
-#### Update your base presenter
+#### Create or update your base presenter
 
-If your base presenter class directly extends the
- `Nette\Application\UI\Presenter` class, as is the case
- with the Nette Sandbox base presenter, you can simply
+If you don't have a base presenter class in your project
+ yet it's time to create one. Just create an abstract class
+ called BasePresenter in the App\Presenters namespace and
+ make all your other presenters extend this class instead
+ of `Nette\Application\UI\Presenter`. Make the BasePresenter
+ class extend the `Nittro\Bridges\NittroUI\Presenter` class.
+
+If you already have a base presenter class which directly extends
+ the `Nette\Application\UI\Presenter` class, as is the case
+ with e.g. the Nette Sandbox base presenter, you can simply
  make your base presenter class extend the
  `Nittro\Bridges\NittroUI\Presenter` class instead.
  If your base presenter needs to extend some other class
@@ -120,3 +127,7 @@ Let's make your site do a tiny little more now that you have
  should be updated alongside the page's content on AJAX requests.
 
 #### That's it!
+
+If you've got everything up and running, you may now proceed to
+
+#### Next: [[AJAX|Cookbook:chapter 3]]
