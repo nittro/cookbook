@@ -104,3 +104,24 @@ That one is actually even simpler. So much so that it's not even a one-liner. Ju
  the history stack when submitted. The whole updated template looks like this:
 
 >> template chapter_3/templates/Chapter3Better.default.latte
+
+#### To sum it up
+
+As you can see, there's not much that needs to be done on the server side when you're
+ integrating your application with Nittro. Mostly it depends on how much you want
+ to actually _enhance_ your application compared to how it already works without AJAX,
+ but even if you go for more enhancement, it usually involves very little work apart
+ from wrapping things with snippets, redrawing them appropriately and occasionally
+ swapping `$presenter->redirect()` for `$presenter->postGet()`.
+
+#### Further notes
+
+Sometimes the default behaviour to load all local URLs using AJAX isn't appropriate.
+ Typical examples are links to downloadable content, or in some cases login forms
+ and other scenarios when you want to reload the whole page. For forms and links
+ which you want to exclude from AJAX handling the solution is to add the
+ `data-ajax="false"` attribute. When you want to force a redirect on the server
+ side to result in a full-page reload you can just add `$presenter->payload->allowAjax = false;`
+ before the redirect, or more succintly `$presenter->allowAjax(false)`, courtesy
+ of the `PresenterUtils` trait. The `allowAjax()` method returns the presenter,
+ so method chaining is possible.
