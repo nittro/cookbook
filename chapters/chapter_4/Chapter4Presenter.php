@@ -11,18 +11,18 @@ class Chapter4Presenter extends Presenter
     public function handleInfo()
     {
         $this->flashMessage('This is an info message', 'info');
-        $this->redrawControl('content');
+        $this->sendPayload();
     }
 
     public function handleWarning()
     {
         $this->flashMessage('This is a warning message', 'warning');
-        $this->redrawControl('content');
+        $this->sendPayload();
     }
 
     public function handleError()
     {
         $this->flashMessage('This is an error message', 'error');
-        $this->redrawControl('content');
+        $this->sendPayload();
     }
 }

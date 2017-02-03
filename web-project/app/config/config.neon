@@ -10,6 +10,9 @@ application:
 session:
     expiration: 14 days
 
+latte:
+    macros:
+        - Nittro\Bridges\NittroLatte\NittroMacros
 
 services:
     router: App\RouterFactory::createRouter

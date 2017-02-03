@@ -1,0 +1,31 @@
+{block content}
+
+<div>
+    <h1>Your cart</h1>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Quantity</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Super Expensive and Useless Gadget</td>
+                <td>{$quantity}</td>
+                <td>&euro; {$quantity * 4500},-</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="row">
+    <div class="col-sm-6 text-left">
+        <a n:href="default" data-value="cancel" class="btn btn-sm btn-link">Continue shopping</a>
+    </div>
+    <div class="col-sm-6 text-right">
+        <a n:href="checkout" class="btn btn-sm btn-primary">Checkout</a>
+    </div>
+</div>

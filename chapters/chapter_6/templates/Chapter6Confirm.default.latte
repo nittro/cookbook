@@ -1,0 +1,12 @@
+{block content}
+
+<h1>Nittro Dialogs: Confirm</h1>
+
+<div n:snippet="article">
+    {ifset $deleted}
+        <p class="text-danger">Ooops! The article had been apparently deleted!</p>
+    {else}
+        <p>This is a very nice article. It would be a shame to delete it by accident.</p>
+        <p><a n:href="delete!" data-prompt="Are you sure you want to delete this article?">Delete article</a></p>
+    {/ifset}
+</div>

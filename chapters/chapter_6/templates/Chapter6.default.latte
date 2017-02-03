@@ -1,0 +1,13 @@
+{block content}
+
+<h1>Welcome to our beautiful shop!</h1>
+
+<h3>Buy this super expensive and useless gadget:</h3>
+
+{form orderForm data-dialog => 'snippet--content'}
+    <h4>Super Expensive and Useless Gadget</h4>
+    <p>
+        <strong>Price:</strong> &euro; 4 500.-
+        {label quantity /} {input quantity size => 4, min => 1, max => 100, step => 1} {input add}
+    </p>
+{/form}

@@ -1,5 +1,13 @@
 {extends '../../common/templates/@layout.latte'}
 
+{block head}
+    <style type="text/css">
+        #flash-messages .nittro-flash {
+            max-width: 400px;
+        }
+    </style>
+{/block}
+
 <ul n:inner-block="nav">
     <li role="presentation"><a n:href="Chapter4:" data-ajax="false">Basic</a></li>
     <li role="presentation"><a n:href="Chapter4:targeted" data-ajax="false">Targeted</a></li>
