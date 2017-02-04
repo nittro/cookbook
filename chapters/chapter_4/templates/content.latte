@@ -1,0 +1,19 @@
+<div n:snippet="clock">
+    <p>It's <strong>{date('l, H:i:s')}</strong>, just so you know.</p>
+</div>
+
+<h3>Without AJAX (default Nette flashes handling):</h3>
+
+<ul>
+    <li><a n:href="info!" data-ajax="false">Info</a></li>
+    <li><a n:href="warning!" data-ajax="false">Warning</a></li>
+    <li><a n:href="error!" data-ajax="false">Error</a></li>
+</ul>
+
+<h3>With AJAX:</h3>
+
+<ul>
+    <li><a n:href="info!" data-history="false">Info</a></li>
+    <li><a n:href="warning!" data-history="false">Warning</a></li>
+    <li><a n:href="error!" data-history="false">Error</a></li>
+</ul>

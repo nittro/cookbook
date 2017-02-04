@@ -2,15 +2,17 @@
 
 {block head}
     <style type="text/css">
-        #flash-messages .nittro-flash {
+        #flashes, .flash-container {
             max-width: 400px;
+            list-style: none;
         }
     </style>
 {/block}
 
 <ul n:inner-block="nav">
     <li role="presentation"><a n:href="Chapter4:" data-ajax="false">Basic</a></li>
-    <li role="presentation"><a n:href="Chapter4:targeted" data-ajax="false">Targeted</a></li>
+    <li role="presentation"><a n:href="Chapter4:inline" data-ajax="false">Inline</a></li>
     <li role="presentation"><a n:href="Chapter4:appearance" data-ajax="false">Custom Appearance</a></li>
-    <li role="presentation"><a n:href="Chapter4Redirects:" data-ajax="false">Redirects</a></li>
+    <li role="presentation"><a n:href="Chapter4:floating" data-ajax="false">Floating</a></li>
+    <div style="height:1000px;"></div>
 </ul>

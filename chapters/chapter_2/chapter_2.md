@@ -43,24 +43,6 @@ Fire up a terminal window and navigate to your project directory.
 composer install nittro/nette-bridges
 ```
 
-#### Register the Nittro Latte macros
-
-### TODO move to a later chapter
-
-Add this to the `latte` section of your `config.neon`:
-
-```neon
-latte:
-    macros:
-        - Nittro\Bridges\NittroLatte\NittroMacros
-```
-
-This will register the Nittro Latte macros `{snippetId}`, `{param}` 
- and `n:dynamic`. These macros will be useful when working with
- some of the Nittro components we'll be discussing in the Basic
- section of the Cookbook and later when we introduce dynamic snippet
- support.
-
 #### Create or update your base presenter
 
 If you don't have a base presenter class in your project

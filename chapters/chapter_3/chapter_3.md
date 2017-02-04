@@ -16,9 +16,12 @@ As usual this chapter builds on code from the previous chapters, so it is assume
 
 #### What you'll get
 
-... tbd
+At the conclusion of this chapter you should have an understanding of Nittro's AJAX 
+ behaviour in your application - and more importantly _why_ and _how_ you can change
+ it in certain scenarios. We'll also talk about animations that (can) happen when
+ Nittro updates the page using AJAX.
 
-#### Part 1: (...)
+#### Part 1: Building the basics
 
 Let's try to build a simple e-mail subscription form into our site. Who knows? Maybe
  we'll discover something along the way.
@@ -112,7 +115,8 @@ As you can see, there's not much that needs to be done on the server side when y
  to actually _enhance_ your application compared to how it already works without AJAX,
  but even if you go for more enhancement, it usually involves very little work apart
  from wrapping things with snippets, redrawing them appropriately and occasionally
- swapping `$presenter->redirect()` for `$presenter->postGet()`.
+ swapping `$presenter->redirect()` for `$presenter->postGet()` or disabling a link
+ or form from pushing a new state to the browser's history with `data-history="false"`.
 
 #### Further notes
 
@@ -122,8 +126,8 @@ Sometimes the default behaviour to load all local URLs using AJAX isn't appropri
  which you want to exclude from AJAX handling the solution is to add the
  `data-ajax="false"` attribute. When you want to force a redirect on the server
  side to result in a full-page reload you can just add `$presenter->payload->allowAjax = false;`
- before the redirect, or more succintly `$presenter->allowAjax(false)`, courtesy
- of the `PresenterUtils` trait. The `allowAjax()` method returns the presenter,
+ before the redirect, or more succintly `$presenter->disallowAjax()`, courtesy
+ of the `PresenterUtils` trait. The `disallowAjax()` method returns the presenter,
  so method chaining is possible.
 
 #### Part 3: Animations
