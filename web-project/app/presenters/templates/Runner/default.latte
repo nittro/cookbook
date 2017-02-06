@@ -8,59 +8,50 @@
 			<nav id="doc-nav">
 				<strong>Basics</strong>
                 <ul class="nav doc-menu">
-					<li class=""><a n:href="Cookbook:Chapter 1" target="example">Chapter 1</a>
-                        <ul>
-                            <li><a n:href="Chapter1:" target="example">example 1</a></li>
-                        </ul>
-                    </li>
-					<li class=""><a n:href="Cookbook:Chapter 2" target="example">Chapter 2</a>
-                        <ul>
-                            <li><a n:href="Chapter2:" target="example">example 2</a></li>
-                        </ul>
-                    </li>
-					<li class=""><a n:href="Cookbook:Chapter 3" target="example">Chapter 3</a>
-                        <ul>
-                            <li><a n:href="Chapter3:" target="example">example 3</a></li>
-                        </ul>
-                    </li>
-					<li class=""><a n:href="Cookbook:Chapter 4" target="example">Chapter 4</a>
-                        <ul>
-                            <li><a n:href="Chapter4:" target="example">example 4</a></li>
-                        </ul>
-                    </li>
+					<li><a n:href="Cookbook:Chapter 1" data-example-href={plink Chapter1:default} target="chapter">1. Instalation</a></li>
+					<li><a n:href="Cookbook:Chapter 2" data-example-href={plink Chapter2:default} target="chapter">2. Nette bridge</a></li>
+					<li><a n:href="Cookbook:Chapter 3" data-example-href={plink Chapter3:default} target="chapter">3. AJAX</a></li>
+					<li><a n:href="Cookbook:Chapter 4" data-example-href={plink Chapter4:default} target="chapter">4. Flash messages</a></li>
+					<li><a n:href="Cookbook:Chapter 5" data-example-href={plink Chapter5:default} target="chapter">5. Forms</a></li>
+					<li><a n:href="Cookbook:Chapter 6" data-example-href={plink Chapter6:default} target="chapter">6. Dialogs</a></li>
 				</ul>
                 <strong>Intermediate</strong>
                 <ul class="nav doc-menu">
-                    <li class=""><a target="example">Chapter X</a>
-                        <ul>
-                            <li><a target="example">example X</a></li>
-                        </ul>
-                    </li>
+                    <li><a target="example">Chapter X</a></li>
                 </ul>
                 <strong>Advance</strong>
                 <strong>Intermediate</strong>
                 <ul class="nav doc-menu">
-                    <li class=""><a target="example">Chapter X</a>
-                        <ul>
-                            <li><a target="example">example X</a></li>
-                        </ul>
-                    </li>
+                    <li><a target="example">Chapter X</a></li>
                 </ul>
                 <strong>Expert</strong>
                 <strong>Intermediate</strong>
                 <ul class="nav doc-menu">
-                    <li class=""><a target="example">Chapter X</a>
-                        <ul>
-                            <li><a target="example">example X</a></li>
-                        </ul>
-                    </li>
+                    <li><a target="example">Chapter X</a></li>
                 </ul>
 			</nav>
 		</div>
-		<div class="col-xs-12 col-md-10">
-			<div class="content-inner">
-				<iframe style="height: 100%;width: 100%; min-height: 600px" src="{plink Cookbook:Chapter 1}" name="example" frameborder="0"></iframe>
-			</div>
+		<div class="col-xs-12 col-md-5">
+            <div class="content-inner">
+                <iframe style="height: 100%;width: 100%; min-height: 600px" src="{plink Cookbook:Chapter 1}" name="chapter" frameborder="0"></iframe>
+            </div>
 		</div>
+        <div class="col-xs-12 col-md-5">
+            <div class="content-inner">
+                <iframe style="height: 100%;width: 100%; min-height: 600px" src="{plink Chapter1:}" name="example" frameborder="0"></iframe>
+            </div>
+        </div>
 	</div>
 </div>
+{/block}
+
+{block scripts}
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script>
+        $(function () {
+            $('body').on("click", "a[data-example-href]", function (e) {
+                window.open($(this).data('example-href'), "example");
+            });
+        });
+    </script>
+{/block}
