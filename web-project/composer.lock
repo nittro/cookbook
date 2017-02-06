@@ -117,23 +117,23 @@
         },
         {
             "name": "nette/application",
-            "version": "v2.4.4",
+            "version": "v2.4.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/application.git",
-                "reference": "3e30a1ec941717668bcdab336d690484700207cd"
+                "reference": "cec392dd66d5432d47b856d70ac64a5ce15f2538"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/application/zipball/3e30a1ec941717668bcdab336d690484700207cd",
-                "reference": "3e30a1ec941717668bcdab336d690484700207cd",
+                "url": "https://api.github.com/repos/nette/application/zipball/cec392dd66d5432d47b856d70ac64a5ce15f2538",
+                "reference": "cec392dd66d5432d47b856d70ac64a5ce15f2538",
                 "shasum": ""
             },
             "require": {
-                "nette/component-model": "~2.3",
-                "nette/http": "~2.2",
-                "nette/reflection": "~2.2",
-                "nette/utils": "~2.4",
+                "nette/component-model": "^2.3",
+                "nette/http": "^2.2",
+                "nette/reflection": "^2.2",
+                "nette/utils": "^2.4 || ~3.0.0",
                 "php": ">=5.6.0"
             },
             "conflict": {
@@ -143,13 +143,13 @@
                 "nette/nette": "<2.2"
             },
             "require-dev": {
-                "latte/latte": "^2.4.1",
+                "latte/latte": "^2.4.3",
                 "mockery/mockery": "^0.9.5",
-                "nette/di": "~2.4",
-                "nette/forms": "~2.4",
+                "nette/di": "^2.4 || ~3.0.0",
+                "nette/forms": "^2.4",
                 "nette/robot-loader": "^2.4.2 || ^3.0",
-                "nette/security": "~2.4",
-                "nette/tester": "~2.0",
+                "nette/security": "^2.4",
+                "nette/tester": "^2.0",
                 "tracy/tracy": "^2.4"
             },
             "suggest": {
@@ -188,7 +188,7 @@
             ],
             "description": "Nette Application MVC Component",
             "homepage": "https://nette.org",
-            "time": "2017-01-19 10:34:07"
+            "time": "2017-02-02 02:25:28"
         },
         {
             "name": "nette/bootstrap",
@@ -263,30 +263,30 @@
         },
         {
             "name": "nette/caching",
-            "version": "v2.5.2",
+            "version": "v2.5.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/caching.git",
-                "reference": "7da6cc65f301e220acba4fd8a11d3afdc642be9e"
+                "reference": "2436e530484a346d0a246733519ceaa40b943bd6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/caching/zipball/7da6cc65f301e220acba4fd8a11d3afdc642be9e",
-                "reference": "7da6cc65f301e220acba4fd8a11d3afdc642be9e",
+                "url": "https://api.github.com/repos/nette/caching/zipball/2436e530484a346d0a246733519ceaa40b943bd6",
+                "reference": "2436e530484a346d0a246733519ceaa40b943bd6",
                 "shasum": ""
             },
             "require": {
-                "nette/finder": "~2.2",
-                "nette/utils": "~2.4",
+                "nette/finder": "^2.2 || ~3.0.0",
+                "nette/utils": "^2.4 || ~3.0.0",
                 "php": ">=5.6.0"
             },
             "conflict": {
                 "nette/nette": "<2.2"
             },
             "require-dev": {
-                "latte/latte": "~2.4",
-                "nette/di": "~2.4",
-                "nette/tester": "~2.0",
+                "latte/latte": "^2.4",
+                "nette/di": "^2.4 || ~3.0.0",
+                "nette/tester": "^2.0",
                 "tracy/tracy": "^2.4"
             },
             "suggest": {
@@ -321,7 +321,7 @@
             ],
             "description": "Nette Caching Component",
             "homepage": "https://nette.org",
-            "time": "2016-10-06 00:08:42"
+            "time": "2017-01-29 20:40:55"
         },
         {
             "name": "nette/component-model",
@@ -382,31 +382,31 @@
         },
         {
             "name": "nette/database",
-            "version": "v2.4.1",
+            "version": "v2.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/database.git",
-                "reference": "7a7b51520f3d98e3f6c38df5495ac775463972d5"
+                "reference": "debc7db9f4d7ffff71e2c3a81f841fbcbab4610d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/database/zipball/7a7b51520f3d98e3f6c38df5495ac775463972d5",
-                "reference": "7a7b51520f3d98e3f6c38df5495ac775463972d5",
+                "url": "https://api.github.com/repos/nette/database/zipball/debc7db9f4d7ffff71e2c3a81f841fbcbab4610d",
+                "reference": "debc7db9f4d7ffff71e2c3a81f841fbcbab4610d",
                 "shasum": ""
             },
             "require": {
                 "ext-pdo": "*",
-                "nette/caching": "~2.2",
-                "nette/utils": "~2.4",
+                "nette/caching": "^2.2",
+                "nette/utils": "^2.4 || ~3.0.0",
                 "php": ">=5.6.0"
             },
             "conflict": {
                 "nette/nette": "<2.2"
             },
             "require-dev": {
-                "mockery/mockery": "~1.0.0",
-                "nette/di": "~2.4",
-                "nette/tester": "~2.0",
+                "mockery/mockery": "^1.0.0",
+                "nette/di": "^2.4 || ~3.0.0",
+                "nette/tester": "^2.0",
                 "tracy/tracy": "^2.4"
             },
             "type": "library",
@@ -438,7 +438,7 @@
             ],
             "description": "Nette Database Component",
             "homepage": "https://nette.org",
-            "time": "2016-10-18 13:27:34"
+            "time": "2017-02-02 02:49:31"
         },
         {
             "name": "nette/di",
