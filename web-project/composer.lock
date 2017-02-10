@@ -1092,12 +1092,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nittro/nette-bridges.git",
-                "reference": "e4a4eca9eab7fca07fea3ea3550b1d80ac7c7f90"
+                "reference": "014955288b3a667926bad6320c0a6d61cd4e8d48"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nittro/nette-bridges/zipball/e4a4eca9eab7fca07fea3ea3550b1d80ac7c7f90",
-                "reference": "e4a4eca9eab7fca07fea3ea3550b1d80ac7c7f90",
+                "url": "https://api.github.com/repos/nittro/nette-bridges/zipball/014955288b3a667926bad6320c0a6d61cd4e8d48",
+                "reference": "014955288b3a667926bad6320c0a6d61cd4e8d48",
                 "shasum": ""
             },
             "require-dev": {
@@ -1122,7 +1122,7 @@
             ],
             "description": "Nittro PHP bridges",
             "homepage": "https://www.nittro.org/",
-            "time": "2017-02-04 20:33:40"
+            "time": "2017-02-09 12:24:28"
         },
         {
             "name": "tracy/tracy",

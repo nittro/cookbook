@@ -1,5 +1,8 @@
 var gulp = require('gulp'),
+    sourcemaps = require('gulp-sourcemaps'),
     less = require('gulp-less'),
+    postcss = require('gulp-postcss'),
+    autoprefixer = require('autoprefixer'),
     uglify = require('gulp-uglify'),
     concat = require('gulp-concat'),
     nittro = require('gulp-nittro');
@@ -27,13 +30,15 @@ var options = {
             // will automatically include the netteForms.js asset
         ajax: true,
         page: true,
-        storage: true,
+        flashes: true,
         routing: true
     },
     extras: {
-        flashes: true,
+        checklist: true,
+        storage: true,
         dialogs: true,
         confirm: true,
+        keymap: true,
         dropzone: true,
         paginator: true
     },
@@ -45,7 +50,7 @@ var options = {
 
         ],
         css: [
-            './bower_components/bootstrap/dist/css/bootstrap.css'
+            './node_modules/bootstrap/dist/css/bootstrap.css'
         ]
     },
     bootstrap: true, // true = generated bootstrap, otherwise provide a path
@@ -57,28 +62,26 @@ var builder = new nittro.Builder(options);
 
 gulp.task('js', function() {
 	return nittro('js', builder)
-		.pipe(concat('nittro-full.min.js'))
+        .pipe(sourcemaps.init())
+		.pipe(concat('nittro.min.js'))
 		.pipe(uglify({mangle: false}))
+        .pipe(sourcemaps.write('.'))
 		.pipe(gulp.dest('www/js/'));
 });
 
-gulp.task('js-dev', function() {
-    return nittro('js', builder)
-        .pipe(concat('nittro-full.js'))
-        .pipe(gulp.dest('www/js/'));
-});
-
-
 gulp.task('css', function() {
     return nittro('css', builder)
-        .pipe(less())
-        .pipe(concat('nittro-full.css'))
+        .pipe(sourcemaps.init())
+        .pipe(less({compress: true}))
+        .pipe(concat('nittro.min.css'))
+        .pipe(postcss([ autoprefixer() ]))
+        .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest('www/css/'));
 });
 
 gulp.task('fonts', function () {
-    return gulp.src('./bower_components/bootstrap/dist/fonts/*')
+    return gulp.src('./node_modules/bootstrap/dist/fonts/*')
         .pipe(gulp.dest('www/fonts/'));
 });
 
-gulp.task('default', ['js-dev', 'css', 'fonts']);
+gulp.task('default', ['js', 'css', 'fonts']);

@@ -35,7 +35,7 @@ Head over to [nittro.org/download](https://www.nittro.org/download)
 Place the following two lines of code inside the `<head>` section 
  of your `@layout.latte` template:
 
->> file chapter_1/templates/@layout.latte from nittro-full.css... to ...nittro-full.js
+>> file chapter_1/templates/@layout.latte from nittro.min.css... to ...nittro.min.js
 
 #### Update your server-side code to enable AJAX
 
